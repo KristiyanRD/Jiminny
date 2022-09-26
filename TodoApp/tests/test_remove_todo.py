@@ -55,7 +55,7 @@ class RemoveTodo(unittest.TestCase):
                 if data != self.__class__.random_choice:
                     self.assertTrue(self.__class__.main_page.is_correct_todo_added(data), '# Added tasks is not displayed!')
             # Check if the todo list decrease
-            self.assertEqual(len(test_data), self.__class__.main_page.get_todo_count(), '# Added tasks are not the same as expected!')
+            self.assertEqual(len(test_data) - 1, self.__class__.main_page.get_todo_count(), '# Added tasks are not the same as expected!')
         except:
             self.driver.save_screenshot('screenshots\\test_02_remove_single_todo_task.png')
             raise Exception('# FAILED: test_02_remove_single_todo_task')
